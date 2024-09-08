@@ -48,6 +48,5 @@ public class Ubicacion {
     public void setSeccion(String seccion) {
         this.seccion = seccion;
     }
-
-     
+ 
 }

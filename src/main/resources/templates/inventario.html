@@ -2,16 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
     <th:block th:include="~{layout}"></th:block>
+
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Inventario</h1>
-        <table class="table small">
+        <div th:if="${#lists.isEmpty(productos)}" class="alert alert alert-danger text-center">
+            <h6>No se encontraron productos</h6>
+        </div>
+        <table class="table small" th:if="${!#lists.isEmpty(productos)}">
             <thead class="table-dark">
                 <tr>
                     <th>Producto</th>
                     <th>Descripción</th>
-                    <th>Cantidad</th>
+                    <th>Stock</th>
                     <th>Precio</th>
                     <th>C&oacute;digo</th>
                     <th>Sector</th>
@@ -28,9 +32,16 @@
                     <td th:text="${producto.codigo}"></td>
                     <td th:text="${producto.ubicacion.sector}"></td>
                     <td th:text="${producto.ubicacion.seccion}"></td>
+                    <td class="text-right">
+                        <button type="button" class="btn btn-sm btn-danger"
+                                th:attr="onclick='confirmarEliminacion(' + ${producto.idproducto} + ');'">Eliminar
+                        </button> 
                 </tr>
+
             </tbody>
         </table>
     </div>
+
+
 </body>
 </html>

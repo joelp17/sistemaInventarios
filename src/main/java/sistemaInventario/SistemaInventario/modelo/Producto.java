@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sistemaInventario.SistemaInventario.modelo;
 
 import jakarta.persistence.Entity;
@@ -29,7 +25,7 @@ public class Producto {
     private double precio;
     private int cantidad_stock;
     @ManyToOne
-    @JoinColumn(name = "idubicacion") // Debe coincidir con el nombre de la columna en la base de datos
+    @JoinColumn(name = "idubicacion")
     private Ubicacion ubicacion;
 
     public int getIdproducto() {

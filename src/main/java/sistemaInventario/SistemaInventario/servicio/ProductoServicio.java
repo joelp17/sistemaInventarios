@@ -16,11 +16,15 @@ import sistemaInventario.SistemaInventario.repositorio.ProductoRepositorio;
  */
 @Service
 public class ProductoServicio {
-   @Autowired
+
+    @Autowired
     private ProductoRepositorio productoRepositorio;
 
-    // Método para obtener todos los productos
     public List<Producto> obtenerTodosProductos() {
         return productoRepositorio.findAll();
+    }
+
+    public void eliminarProducto(Long id) {
+        productoRepositorio.deleteById(id);
     }
 }
