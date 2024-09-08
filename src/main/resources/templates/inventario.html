@@ -4,6 +4,33 @@
     <th:block th:include="~{layout}"></th:block>
 </head>
 <body>
-     
+    <div class="container mt-5">
+        <h1 class="text-center">Inventario</h1>
+        <table class="table small">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>C&oacute;digo</th>
+                    <th>Sector</th>
+                    <th>Secci&oacute;n</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.descripcion}"></td>
+                    <td th:text="${producto.cantidad_stock}"></td>
+                    <td class="text-right" th:text="${producto.precio}"></td>
+                    <td th:text="${producto.codigo}"></td>
+                    <td th:text="${producto.ubicacion.sector}"></td>
+                    <td th:text="${producto.ubicacion.seccion}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

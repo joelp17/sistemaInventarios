@@ -34,7 +34,6 @@ public class UsuarioServicio implements UserDetailsService {
         return org.springframework.security.core.userdetails.User
                 .withUsername(usuario.getNombre())
                 .password(usuario.getContrasenia())
-                //.authorities("USER")
                 .build();
     }
 
