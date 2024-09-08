@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Sistema de inventario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <script src="/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div sec:authorize="isAuthenticated()">
+            <div class="container">
+                <div class="row align-items-center mt-2">
+                    <div class="col">
+                        <h5>Sistema de inventarios</h5>
+                    </div>
+                    <div class="col text-right">
+                        <form action="/logout" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-outline-danger">Cerrar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
