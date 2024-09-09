@@ -12,6 +12,7 @@ public class Login {
     @GetMapping("/login")
     public String loginPage(RedirectAttributes redirectAttributes) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        //Si el usuario ya esta logeado, que no redireccione a login de nuevo
         if (authentication != null && authentication.isAuthenticated() && !"anonymousUser".equals(authentication.getPrincipal().toString())) {
             return "redirect:/inventario";
         }

@@ -25,7 +25,7 @@ public class ProductoServicio {
     private ProductoRepositorio productoRepositorio;
     @Autowired
     private UbicacionRepositorio ubicacionRepositorio;
-     @Autowired
+    @Autowired
     private MovimientoRepositorio movimientoRepositorio;
 
     public List<Producto> obtenerTodosProductos() {
@@ -41,7 +41,11 @@ public class ProductoServicio {
     }
 
     public Ubicacion obtenerUbicacionPorId(Long id) {
-        return ubicacionRepositorio.findById(id).orElseThrow(() -> new RuntimeException("Ubicación no encontrada"));
+        return ubicacionRepositorio.findById(id).orElse(null); // Devuelve null si no se encuentra
+    }
+
+    public Producto obtenerProductoPorId(Long id) {
+        return productoRepositorio.findById(id).orElse(null);
     }
 
     public void guardarProducto(Producto producto) {

@@ -42,6 +42,13 @@
                     <td th:text="${producto.ubicacion.sector}"></td>
                     <td th:text="${producto.ubicacion.seccion}"></td>
                     <td class="text-right">
+                        <a href="#" 
+                           data-fancybox 
+                           data-type="ajax" 
+                           th:attr="data-src='/formularioEditarProducto?id=' + ${producto.idproducto}" 
+                           class="btn btn-sm btn-warning">
+                            Editar
+                        </a>
                         <button type="button" class="btn btn-sm btn-danger"
                                 th:attr="onclick='confirmarEliminacion(' + ${producto.idproducto} + ');'">Eliminar
                         </button> 
@@ -52,11 +59,11 @@
     </div>
 
     <script>
-            $(document).ready(function() {
-                $('[data-fancybox]').fancybox({
-                    // Optional Fancybox settings can go here
-                });
+        $(document).ready(function () {
+            $('[data-fancybox]').fancybox({
+                // Optional Fancybox settings can go here
             });
+        });
     </script>
 </body>
 </html>

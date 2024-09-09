@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Editar Producto</title>
+    </head>
+    <body>
+        <div style="width: 80%;" id="fancyModal">
+
+            <div id="formEditarProducto">
+                <h2>Editar Producto</h2>
+                <form id="formularioEditarProducto">
+                    <input type="hidden" id="idproducto" name="idproducto" th:value="${producto.idproducto}" />
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" maxlength="200" name="nombre" class="form-control" th:value="${producto.nombre}" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="codigo">Código</label>
+                        <input type="text" id="codigo" name="codigo" maxlength="20" class="form-control" th:value="${producto.codigo}" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" id="descripcion" name="descripcion" maxlength="20" class="form-control" th:value="${producto.descripcion}" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad_stock">Cantidad</label>
+                        <input type="number" id="cantidad_stock" name="cantidad_stock" class="form-control" th:value="${producto.cantidad_stock}" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input type="number" id="precio" name="precio" class="form-control" th:value="${producto.precio}" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacionId">Ubicación</label>
+                        <select id="ubicacionId" name="ubicacionId" class="form-control" required>
+                            <option th:each="ubicacion : ${ubicaciones}" 
+                                    th:value="${ubicacion.idubicacion}" 
+                                    th:text="${ubicacion.sector + ' - ' + ubicacion.seccion}"
+                                    th:selected="${producto.ubicacion.idubicacion == ubicacion.idubicacion}">
+                            </option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="editarProducto()">Guardar Cambios</button>
+                </form>
+            </div></body>
+</div>
+</html>

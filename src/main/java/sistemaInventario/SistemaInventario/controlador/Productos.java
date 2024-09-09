@@ -51,7 +51,7 @@ public class Productos {
             MovimientosInventario movimiento = new MovimientosInventario();
             movimiento.setFecha(LocalDateTime.now());
             movimiento.setTipo_movimiento(tipo_movimiento);
-            movimiento.setIdproducto(producto.getIdproducto());
+
             movimiento.setIdubicacion(ubicacionId);
             movimiento.setCantidad(cantidad_stock);
             productoServicio.guardarMovimiento(movimiento);
@@ -62,4 +62,7 @@ public class Productos {
         }
         return ResponseEntity.ok(response.toString());
     }
+
+     
+ 
 }

@@ -21,8 +21,7 @@ public class MovimientosInventario {
     private LocalDateTime fecha;
     private int tipo_movimiento;
     private int cantidad;
-    private int idproducto;
-    private Long idubicacion;
+     private Long idubicacion;
 
     public int getIdmovimiento() {
         return idmovimiento;
@@ -55,15 +54,8 @@ public class MovimientosInventario {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
-    public int getIdproducto() {
-        return idproducto;
-    }
-
-    public void setIdproducto(int idproducto) {
-        this.idproducto = idproducto;
-    }
-
+ 
+ 
     public Long getIdubicacion() {
         return idubicacion;
     }
