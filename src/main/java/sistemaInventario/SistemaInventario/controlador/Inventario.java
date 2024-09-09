@@ -1,4 +1,3 @@
- 
 package sistemaInventario.SistemaInventario.controlador;
 
 //import ch.qos.logback.core.model.Model;
@@ -36,11 +35,17 @@ public class Inventario {
         try {
             productoServicio.eliminarProducto(id);
             response.put("success", true);
-            response.put("message", "Producto eliminado exitosamente.");
+   
         } catch (JSONException e) {
-            response.put("success", false);
-            response.put("message", "No se pudo eliminar el producto");
+            response.put("success", false);        
         }
         return ResponseEntity.ok(response.toString());
     }
+
+    @GetMapping("/formularioAgregarProducto")
+    public String formularioAgregarProducto(Model model) {
+        model.addAttribute("ubicaciones", productoServicio.obtenerTodasUbicaciones());
+        return "agregarProducto";
+    }
+
 }

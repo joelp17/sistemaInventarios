@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Agregar Producto</title>
+    </head>
+    <body>
+
+        <div style="width: 80%;" id="fancyModal">
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="formAgregarProducto">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>C&oacute;digo</label>
+                    <input type="text" id="codigo" name="codigo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <labe>Cantidad</label>
+                        <input type="number" id="cantidad_stock" name="cantidad_stock" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input type="number" id="precio" name="precio" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <select id="ubicacionId" name="ubicacionId" class="form-control">
+                                <option value="">Seleccione una ubicación</option>
+                                <option th:each="ubicacion : ${ubicaciones}" 
+                                        th:value="${ubicacion.idubicacion}" 
+                                        th:text="${ubicacion.sector + ' - ' + ubicacion.seccion}">
+                                </option>
+                            </select>
+                        </div>
+
+                        <button type="button" onclick="agregarProducto()" class="btn btn-primary">Agregar</button>
+                        </form>
+                </div>
+                </body>
+                </html>

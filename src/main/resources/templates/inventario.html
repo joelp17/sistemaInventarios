@@ -5,8 +5,17 @@
 
 </head>
 <body>
+
     <div class="container mt-5">
-        <h1 class="text-center">Inventario</h1>
+
+        <div class="row">
+            <div class="text-center col-8">
+                <h1>Inventario</h1>
+            </div>
+            <div class="text-right col-4">
+                <a href="/formularioAgregarProducto" data-fancybox data-type="ajax" class="btn btn-primary">Agregar Producto</a>
+            </div>
+        </div>
         <div th:if="${#lists.isEmpty(productos)}" class="alert alert alert-danger text-center">
             <h6>No se encontraron productos</h6>
         </div>
@@ -42,6 +51,12 @@
         </table>
     </div>
 
-
+    <script>
+            $(document).ready(function() {
+                $('[data-fancybox]').fancybox({
+                    // Optional Fancybox settings can go here
+                });
+            });
+    </script>
 </body>
 </html>
