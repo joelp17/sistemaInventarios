@@ -1,3 +1,4 @@
+0.- Ir a la rama master para descargar le proyecto.
 1.-Descargar e importar el proyecto en su enterno de desarrollo. El programa se realizó con JAVA 17
 2.-En los archivos se encuentra la base de datos llamada sistemainventarios.sql. Hay que importarla en su manejador.
 3.- El usuario con el cual esta configurado el application.properties es pruebas y la contraseña es 123, para la base de datos.
